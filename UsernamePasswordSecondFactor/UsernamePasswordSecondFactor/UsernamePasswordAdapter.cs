@@ -1,6 +1,5 @@
-﻿//------------------------------------------------------------
-// Copyright (c) Microsoft Corporation.  All rights reserved.
-//------------------------------------------------------------
+﻿// Copyright (c) Microsoft Corporation. All rights reserved.
+// Licensed under the MIT License.
 
 using System;
 using System.IO;
@@ -25,11 +24,6 @@ namespace UsernamePasswordSecondFactor
         #region IAuthenticationAdapter Members
 
         public IAuthenticationAdapterMetadata Metadata => new UsernamePasswordMetadata();
-
-        #endregion
-
-
-        #region IAuthenticationAdapter Members
 
         public IAdapterPresentation BeginAuthentication(Claim identityClaim, HttpListenerRequest request, IAuthenticationContext authContext)
         {
