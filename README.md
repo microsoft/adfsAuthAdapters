@@ -1,7 +1,18 @@
+# ADFS Authentication Adapters 
 
-# Contributing
+## Overview 
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+This repository contains custom authentication adapters that you can use with ADFS. The following adapters are currently included:
+
+1. __[UsernamePasswordSecondFactor](UsernamePasswordSecondFactor)__ - External authentication adapter for performing Username + Password 
+authentication for MFA. 
+
+## Contributing
+
+This project welcomes contributions and suggestions. We encourage you to fork this project, include any authentication providers you find
+useful, and then do a pull request to master. If your providers work, we'll include them so everyone can benefit.
+
+Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 the rights to use your contribution. For details, visit https://cla.microsoft.com.
 

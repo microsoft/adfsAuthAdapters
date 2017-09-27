@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdminFriendlyName" xml:space="preserve">
+    <value>Forms Authentication as Secondary Authentication</value>
+  </data>
+  <data name="AuthenticationFailed" xml:space="preserve">
+    <value>AuthenticationFailed</value>
+  </data>
+  <data name="AuthPage" xml:space="preserve">
+    <value>&lt;div id="loginArea"&gt;        
+&lt;div id="loginMessage" class="groupMargin"&gt;%PageIntroductionTitle%&lt;/div&gt;
+
+&lt;script type="text/javascript" language="JavaScript"&gt;
+//&lt;![CDATA[
+
+	function Login() {
+	}
+
+	Login.userNameInput = 'userNameInput';
+	Login.passwordInput = 'passwordInput';
+
+	Login.initialize = function () {
+
+	}();
+
+	Login.submitLoginRequest = function () { 
+
+		console.log("Start");
+		var userName = document.getElementById(Login.userNameInput);
+		var password = document.getElementById(Login.passwordInput);
+
+		if (!userName.value || !userName.value.match('[@\\\\]')) {
+			return false;
+		}
+
+		if (!password.value) {
+			return false;
+		}
+		console.log("Pre-Submit");
+		document.forms['loginForm'].submit();
+		console.log("End");		
+		return false;
+	};
+
+//]]&gt;
+&lt;/script&gt;
+
+
+&lt;form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event &amp;&amp; event.keyCode == 13) Login.submitLoginRequest();" action="%PageActionUrl%" &gt;
+	&lt;div id="error" class="fieldMargin error smallText"&gt;
+		&lt;label id="errorText" for="%LoginPageErrorCause%"&gt;%PageIntroductionText%&lt;/label&gt;
+	&lt;/div&gt;
+
+	&lt;!-- These inputs are required by the presentation framework.  Do not modify or remove --&gt;
+	&lt;input id="authMethod" type="hidden" name="AuthMethod" value="%AuthMethod%"/&gt;
+	&lt;input id="context" type="hidden" name="Context" value="%Context%"/&gt;
+	&lt;!-- End inputs are required by the presentation framework. --&gt;
+	
+	&lt;div id="formsAuthenticationArea"&gt;
+		&lt;div id="userNameArea"&gt;
+			&lt;input id="userNameInput" name="UserName" type="hidden" value="%LoginPageUserNameExample%" tabindex="1" class="text fullWidth" 
+				spellcheck="false" autocomplete="off" readonly/&gt;     
+		&lt;/div&gt;
+
+		&lt;div id="passwordArea"&gt;
+			 &lt;input id="passwordInput" name="PasswordInput" type="password" tabindex="2" class="text fullWidth" 
+				placeholder="%LoginPagePasswordLabel%" autocomplete="off"/&gt;                                   
+		&lt;/div&gt;
+		&lt;div id="submissionArea" class="submitMargin"&gt;
+			&lt;span id="submitButton" class="submit" tabindex="4" 
+				onKeyPress="if (event &amp;&amp; event.keyCode == 32) Login.submitLoginRequest();" 
+				onclick="Login.submitLoginRequest();"&gt;%PageSubmitButtonLabel%&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="ChoiceFail" xml:space="preserve">
+    <value>ChoiceFail</value>
+  </data>
+  <data name="ChoiceSuccess" xml:space="preserve">
+    <value>ChoiceSuccess</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Forms Authentication as Secondary Authentication</value>
+  </data>
+  <data name="ErrorFailSelected" xml:space="preserve">
+    <value>ErrorFailSelected</value>
+  </data>
+  <data name="ErrorInvalidContext" xml:space="preserve">
+    <value>ErrorInvalidContext</value>
+  </data>
+  <data name="ErrorInvalidSessionId" xml:space="preserve">
+    <value>ErrorInvalidSessionId</value>
+  </data>
+  <data name="ErrorNoAnswerProvided" xml:space="preserve">
+    <value>ErrorNoAnswerProvided</value>
+  </data>
+  <data name="ErrorNoUserIdentity" xml:space="preserve">
+    <value>ErrorNoUserIdentity</value>
+  </data>
+  <data name="FailedLogin" xml:space="preserve">
+    <value>Your password is invalid, try again.</value>
+  </data>
+  <data name="PageIntroductionText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PageIntroductionTitle" xml:space="preserve">
+    <value>Enter your password</value>
+  </data>
+  <data name="PageTitle" xml:space="preserve">
+    <value>PageTitle</value>
+  </data>
+  <data name="SubmitButtonLabel" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="UserChoice" xml:space="preserve">
+    <value>UserChoice</value>
+  </data>
+</root>
