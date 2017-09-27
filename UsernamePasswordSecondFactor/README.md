@@ -1,4 +1,4 @@
-# Username + Password MFA Authentication Adapters 
+# Username/Password MFA Authentication Adapters 
 
 ## Overview 
 
