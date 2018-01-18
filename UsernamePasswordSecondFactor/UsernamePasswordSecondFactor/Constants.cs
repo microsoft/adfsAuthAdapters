@@ -5,6 +5,7 @@ namespace UsernamePasswordSecondFactor
 {
     internal static class Constants
     {
+
         public const string UsernamePasswordMfa = "http://schemas.microsoft.com/ws/2012/12/authmethod/usernamepasswordMFA";
 
         public const string AuthenticationMethodClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod";
@@ -14,6 +15,7 @@ namespace UsernamePasswordSecondFactor
         public static class AuthContextKeys
         {
             public const string SessionId = "sessionid";
+            public const string Identity = "id";
         }
 
         public static class DynamicContentLabels

@@ -36,6 +36,9 @@ namespace UsernamePasswordSecondFactor
                 throw new InvalidDataException(ResourceHandler.GetResource(Constants.ResourceNames.ErrorNoUserIdentity, authContext.Lcid));
             }
 
+            // save the current user ID in the encrypted blob.
+            authContext.Data.Add(Constants.AuthContextKeys.Identity, identityClaim.Value);
+
             return CreateAdapterPresentation(identityClaim.Value);
         }
 
@@ -78,6 +81,18 @@ namespace UsernamePasswordSecondFactor
 
             string username = (string)proofData.Properties[Constants.PropertyNames.Username];
             string password = (string)proofData.Properties[Constants.PropertyNames.Password];
+
+            // validate that the username posted back matches the identity we saved in the encrypted blob.
+            // this should never fail for valid requests.
+            if (!authContext.Data.ContainsKey(Constants.AuthContextKeys.Identity))
+            {
+                throw new ArgumentNullException(Constants.AuthContextKeys.Identity);
+            }
+
+            if (!string.Equals(authContext.Data[Constants.AuthContextKeys.Identity], username))
+            {
+                throw new InvalidOperationException(nameof(username));
+            }
 
             if (PasswordValidator.Validate(username, password))
             {
