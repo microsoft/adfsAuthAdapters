@@ -85,22 +85,29 @@ namespace UsernamePasswordSecondFactor
                 Trace.TraceError(string.Format("TryEndAuthentication Context does not contains userID."));
                 throw new ArgumentOutOfRangeException(Constants.AuthContextKeys.Identity);
             }
-
+            
+            if (!authContext.Data.ContainsKey(Constants.AuthContextKeys.Identity))
+            {
+                throw new ArgumentNullException(Constants.AuthContextKeys.Identity);
+            }
+            
             string username = (string)authContext.Data[Constants.AuthContextKeys.Identity];
             string password = (string)proofData.Properties[Constants.PropertyNames.Password];
 
             try
             {
-                if (PasswordValidator.Validate(username, password))
-                {
-                    outgoingClaims = new[]
-                    {
-                    new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
-                };
+              if (PasswordValidator.Validate(username, password))
+              {
+                  if (PasswordValidator.Validate(username, password))
+                  {
+                      outgoingClaims = new[]
+                      {
+                      new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
+                  };
 
-                    // null == authentication succeeded.
-                    return null;
-                }
+                  // null == authentication succeeded.
+                  return null;
+             }
             }
             catch (Exception ex)
             {
