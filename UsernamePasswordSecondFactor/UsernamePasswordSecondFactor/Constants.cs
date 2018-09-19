@@ -30,7 +30,7 @@ namespace UsernamePasswordSecondFactor
             public const string markerChoiceSuccess = "%ChoiceSuccess%";
             public const string markerChoiceFail = "%ChoiceFail%";
             public const string markerUserChoice = "%UserChoice%";
-            public const string markerLoginPageUserNameExample = "%LoginPageUserNameExample%";
+            public const string markerLoginPageUsername = "%Username%";
             public const string markerLoginPagePasswordLabel = "%LoginPagePasswordLabel%";
 
         }

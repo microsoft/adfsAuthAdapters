@@ -124,72 +124,60 @@
     <value>AuthenticationFailed</value>
   </data>
   <data name="AuthPage" xml:space="preserve">
-    <value>&lt;div id="loginArea"&gt;        
-&lt;div id="loginMessage" class="groupMargin"&gt;%PageIntroductionTitle%&lt;/div&gt;
+    <value>&lt;div id="loginArea"&gt;
+    &lt;script type="text/javascript" language="JavaScript"&gt;
+    //&lt;![CDATA[
 
-&lt;script type="text/javascript" language="JavaScript"&gt;
-//&lt;![CDATA[
+        function Login() {
+        }
 
-	function Login() {
-	}
+        Login.passwordInput = 'passwordInput';
 
-	Login.userNameInput = 'userNameInput';
-	Login.passwordInput = 'passwordInput';
+        Login.initialize = function () {
 
-	Login.initialize = function () {
+        }();
 
-	}();
+        Login.submitLoginRequest = function () { 
 
-	Login.submitLoginRequest = function () { 
+            console.log("Start");
+            var password = document.getElementById(Login.passwordInput);
 
-		console.log("Start");
-		var userName = document.getElementById(Login.userNameInput);
-		var password = document.getElementById(Login.passwordInput);
+            if (!password.value) {
+                return false;
+            }
+            console.log("Pre-Submit");
+            document.forms['loginForm'].submit();
+            console.log("End");		
+            return false;
+        };
 
-		if (!userName.value || !userName.value.match('[@\\\\]')) {
-			return false;
-		}
-
-		if (!password.value) {
-			return false;
-		}
-		console.log("Pre-Submit");
-		document.forms['loginForm'].submit();
-		console.log("End");		
-		return false;
-	};
-
-//]]&gt;
-&lt;/script&gt;
+    //]]&gt;
+    &lt;/script&gt;
 
 
-&lt;form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event &amp;&amp; event.keyCode == 13) Login.submitLoginRequest();" action="%PageActionUrl%" &gt;
-	&lt;div id="error" class="fieldMargin error smallText"&gt;
-		&lt;label id="errorText" for="%LoginPageErrorCause%"&gt;%PageIntroductionText%&lt;/label&gt;
-	&lt;/div&gt;
+    &lt;form method="post" id="loginForm" autocomplete="off" novalidate="novalidate" onKeyPress="if (event &amp;&amp; event.keyCode == 13) Login.submitLoginRequest();" action="%PageActionUrl%" &gt;
+        &lt;div id="error" class="fieldMargin error smallText"&gt;
+            &lt;label id="errorText" for="%LoginPageErrorCause%"&gt;%PageIntroductionText%&lt;/label&gt;
+        &lt;/div&gt;
 
-	&lt;!-- These inputs are required by the presentation framework.  Do not modify or remove --&gt;
-	&lt;input id="authMethod" type="hidden" name="AuthMethod" value="%AuthMethod%"/&gt;
-	&lt;input id="context" type="hidden" name="Context" value="%Context%"/&gt;
-	&lt;!-- End inputs are required by the presentation framework. --&gt;
-	
-	&lt;div id="formsAuthenticationArea"&gt;
-		&lt;div id="userNameArea"&gt;
-			&lt;input id="userNameInput" name="UserName" type="hidden" value="%LoginPageUserNameExample%" tabindex="1" class="text fullWidth" 
-				spellcheck="false" autocomplete="off" readonly/&gt;     
-		&lt;/div&gt;
-
-		&lt;div id="passwordArea"&gt;
-			 &lt;input id="passwordInput" name="PasswordInput" type="password" tabindex="2" class="text fullWidth" 
-				placeholder="%LoginPagePasswordLabel%" autocomplete="off"/&gt;                                   
-		&lt;/div&gt;
-		&lt;div id="submissionArea" class="submitMargin"&gt;
-			&lt;span id="submitButton" class="submit" tabindex="4" 
-				onKeyPress="if (event &amp;&amp; event.keyCode == 32) Login.submitLoginRequest();" 
-				onclick="Login.submitLoginRequest();"&gt;%PageSubmitButtonLabel%&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/form&gt;
+        &lt;!-- These inputs are required by the presentation framework.  Do not modify or remove --&gt;
+        &lt;input id="authMethod" type="hidden" name="AuthMethod" value="%AuthMethod%"/&gt;
+        &lt;input id="context" type="hidden" name="Context" value="%Context%"/&gt;
+        &lt;!-- End inputs are required by the presentation framework. --&gt;
+        
+        &lt;div id="formsAuthenticationArea"&gt;
+            &lt;div id="identityBanner" class="text fullWidth"&gt;%Username%&lt;/div&gt;
+            &lt;div id="passwordArea"&gt;
+                 &lt;input id="passwordInput" name="PasswordInput" placeholder="Password" type="password" tabindex="2" class="text fullWidth" 
+                    placeholder="%LoginPagePasswordLabel%" autocomplete="off"/&gt;                                   
+            &lt;/div&gt;
+            &lt;div id="submissionArea" class="submitMargin"&gt;
+                &lt;span id="submitButton" class="submit" tabindex="4" 
+                    onKeyPress="if (event &amp;&amp; event.keyCode == 32) Login.submitLoginRequest();" 
+                    onclick="Login.submitLoginRequest();"&gt;%PageSubmitButtonLabel%&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
 &lt;/div&gt;</value>
   </data>
   <data name="ChoiceFail" xml:space="preserve">
@@ -217,7 +205,7 @@
     <value>ErrorNoUserIdentity</value>
   </data>
   <data name="FailedLogin" xml:space="preserve">
-    <value>Your password is invalid, try again.</value>
+    <value>Incorrect password. Type the correct password, and try again.</value>
   </data>
   <data name="PageIntroductionText" xml:space="preserve">
     <value />

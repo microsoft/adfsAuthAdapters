@@ -80,7 +80,7 @@ namespace UsernamePasswordSecondFactor
                 dynamicContents[Constants.DynamicContentLabels.markerPageIntroductionText] = GetPresentationResource(Constants.ResourceNames.FailedLogin, lcid);
             }
 
-            dynamicContents[Constants.DynamicContentLabels.markerLoginPageUserNameExample] = _username;
+            dynamicContents[Constants.DynamicContentLabels.markerLoginPageUsername] = _username;
 
             string authPageTemplate = ResourceHandler.GetResource(Constants.ResourceNames.AuthPageTemplate, lcid);
 
