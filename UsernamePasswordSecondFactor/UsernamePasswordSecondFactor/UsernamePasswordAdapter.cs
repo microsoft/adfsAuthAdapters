@@ -2,6 +2,7 @@
 // Licensed under the MIT License.
 
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Net;
 using Microsoft.IdentityServer.Web.Authentication.External;
@@ -79,34 +80,43 @@ namespace UsernamePasswordSecondFactor
                 throw new ExternalAuthenticationException(ResourceHandler.GetResource(Constants.ResourceNames.ErrorNoAnswerProvided, authContext.Lcid), authContext);
             }
 
-            string username = (string)proofData.Properties[Constants.PropertyNames.Username];
-            string password = (string)proofData.Properties[Constants.PropertyNames.Password];
-
-            // validate that the username posted back matches the identity we saved in the encrypted blob.
-            // this should never fail for valid requests.
+            if (!authContext.Data.ContainsKey(Constants.AuthContextKeys.Identity))
+            {
+                Trace.TraceError(string.Format("TryEndAuthentication Context does not contains userID."));
+                throw new ArgumentOutOfRangeException(Constants.AuthContextKeys.Identity);
+            }
+            
             if (!authContext.Data.ContainsKey(Constants.AuthContextKeys.Identity))
             {
                 throw new ArgumentNullException(Constants.AuthContextKeys.Identity);
             }
+            
+            string username = (string)authContext.Data[Constants.AuthContextKeys.Identity];
+            string password = (string)proofData.Properties[Constants.PropertyNames.Password];
 
-            if (!string.Equals(authContext.Data[Constants.AuthContextKeys.Identity], username))
+            try
             {
-                throw new InvalidOperationException(nameof(username));
-            }
-
-            if (PasswordValidator.Validate(username, password))
-            {
-                outgoingClaims = new[]
+                if (PasswordValidator.Validate(username, password))
                 {
-                    new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
-                };
+                    outgoingClaims = new Claim[]
+                    {
+                        new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
+                    };
 
-                return null;
+                    // null == authentication succeeded.
+                    return null;
+
+                }
+                else
+                {
+                    return CreateAdapterPresentationOnError(username, new UsernamePasswordValidationException("Authentication failed", authContext));
+                }
             }
-
-            return CreateAdapterPresentationOnError(username, new UsernamePasswordValidationException());
+            catch (Exception ex)
+            {
+                throw new UsernamePasswordValidationException(string.Format("UsernamePasswordSecondFactor password validation failed due to exception {0} failed to validate password {0}", ex), ex, authContext);
+            }
         }
-
         #endregion
     }
 }

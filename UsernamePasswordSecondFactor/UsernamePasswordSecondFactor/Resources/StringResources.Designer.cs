@@ -79,27 +79,28 @@ namespace UsernamePasswordSecondFactor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;div id=&quot;loginArea&quot;&gt;        
-        ///&lt;div id=&quot;loginMessage&quot; class=&quot;groupMargin&quot;&gt;%PageIntroductionTitle%&lt;/div&gt;
+        ///   Looks up a localized string similar to &lt;div id=&quot;loginArea&quot;&gt;
+        ///    &lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot;&gt;
+        ///    //&lt;![CDATA[
         ///
-        ///&lt;script type=&quot;text/javascript&quot; language=&quot;JavaScript&quot;&gt;
-        /////&lt;![CDATA[
+        ///        function Login() {
+        ///        }
         ///
-        ///	function Login() {
-        ///	}
+        ///        Login.passwordInput = &apos;passwordInput&apos;;
         ///
-        ///	Login.userNameInput = &apos;userNameInput&apos;;
-        ///	Login.passwordInput = &apos;passwordInput&apos;;
+        ///        Login.initialize = function () {
         ///
-        ///	Login.initialize = function () {
+        ///        }();
         ///
-        ///	}();
+        ///        Login.submitLoginRequest = function () { 
         ///
-        ///	Login.submitLoginRequest = function () { 
+        ///            console.log(&quot;Start&quot;);
+        ///            var password = document.getElementById(Login.passwordInput);
         ///
-        ///		console.log(&quot;Start&quot;);
-        ///		var userName = document.getElementById(Login.userNameInput);
-        ///		var password = document.getElementById(Log [rest of string was truncated]&quot;;.
+        ///            if (!password.value) {
+        ///                return false;
+        ///            }
+        ///            con [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AuthPage {
             get {
@@ -180,7 +181,7 @@ namespace UsernamePasswordSecondFactor.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your password is invalid, try again..
+        ///   Looks up a localized string similar to Incorrect password. Type the correct password, and try again..
         /// </summary>
         internal static string FailedLogin {
             get {
