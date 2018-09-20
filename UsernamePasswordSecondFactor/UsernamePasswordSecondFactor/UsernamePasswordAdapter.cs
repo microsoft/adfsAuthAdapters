@@ -96,26 +96,26 @@ namespace UsernamePasswordSecondFactor
 
             try
             {
-              if (PasswordValidator.Validate(username, password))
-              {
-                  if (PasswordValidator.Validate(username, password))
-                  {
-                      outgoingClaims = new[]
-                      {
-                      new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
-                  };
+                if (PasswordValidator.Validate(username, password))
+                {
+                    outgoingClaims = new Claim[]
+                    {
+                        new Claim(Constants.AuthenticationMethodClaimType, Constants.UsernamePasswordMfa)
+                    };
 
-                  // null == authentication succeeded.
-                  return null;
-             }
+                    // null == authentication succeeded.
+                    return null;
+
+                }
+                else
+                {
+                    return CreateAdapterPresentationOnError(username, new UsernamePasswordValidationException("Authentication failed", authContext));
+                }
             }
             catch (Exception ex)
             {
                 throw new UsernamePasswordValidationException(string.Format("UsernamePasswordSecondFactor password validation failed due to exception {0} failed to validate password {0}", ex), ex, authContext);
             }
-
-
-            return CreateAdapterPresentationOnError(username, new UsernamePasswordValidationException("Authentication failed", authContext));
         }
         #endregion
     }
